@@ -1,7 +1,7 @@
 # Wanna POSIX-compatiable sockets under Windows?
 # Fuck you then!
 
-Windows doesn't care about standards - M$ lives in their own magic world with rainbows and ponies. Therefore, you will feel PAIN in your ass if you even try to develop native programs unsing C and berkeley sockets.
+Windows doesn't care about standards - M$ lives in their own magic world with rainbows and ponies. Therefore, you will feel PAIN in your ass if you even try to develop native programs using C and berkeley sockets.
 
 The purpose if this template is to decrease amount of pain during googling compatiable socket-oriented windowsshit. It contains:
 
