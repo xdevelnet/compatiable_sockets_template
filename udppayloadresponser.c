@@ -47,23 +47,23 @@ int main() {
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	char buffer[1000];
-	
+
 	ssize_t got = 0;
-	
+
 	struct sockaddr incoming_addr[1];
 	socklen_t incoming_addr_len[1] = {sizeof(incoming_addr)};
-	
+
 	start_over:
-	
+
 	got = recvfrom(fd, buffer, sizeof(buffer), 0, incoming_addr, incoming_addr_len);
 	if (got < 0) {
 		perror("GOT LESS THEN ZERO! OMG!");
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	if (
 		sendto(fd, payload1, strizeof(payload1), 0, incoming_addr, *incoming_addr_len) < 0 or
 		sendto(fd, payload2, strizeof(payload2), 0, incoming_addr, *incoming_addr_len) < 0
@@ -71,10 +71,10 @@ int main() {
 		perror("can't sendto");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	goto start_over; // I DARE YOU
-	
+
 	SOCKSTOP
-	
+
 	return EXIT_SUCCESS;
 }
